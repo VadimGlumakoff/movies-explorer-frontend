@@ -2,7 +2,13 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import CurrentUserContext from "../../context/context";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+  Navigate,
+} from "react-router-dom";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import Profile from "../Profile/Profile";
@@ -266,7 +272,7 @@ function App() {
                     isQueryIn={isQueryIn}
                   />
                 ) : (
-                  navigate("/")
+                  <Navigate to="/" />
                 )
               }
             />
