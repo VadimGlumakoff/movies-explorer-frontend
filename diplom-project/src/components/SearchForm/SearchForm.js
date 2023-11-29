@@ -21,7 +21,7 @@ function SearchForm({
 
   function handleSubmit(e) {
     e.preventDefault();
-   
+
     if (location.pathname === "/movies") {
       sessionStorage.setItem("inputValue", searchValue);
       setQueryMovies(searchValue);
@@ -36,7 +36,6 @@ function SearchForm({
 
       setSearchValue(savedValue);
     }
-
   }, []);
 
   useEffect(() => {
@@ -45,7 +44,7 @@ function SearchForm({
     } else {
       setErrMessageSearch("");
     }
-  }, [searchValue])
+  }, [searchValue]);
 
   function handleChangeInput(e) {
     setSearchValue(e.target.value);
@@ -73,15 +72,11 @@ function SearchForm({
             value={searchValue}
             required
           />
-          {searchValue.length === 0 ? (
-            <button className="search-form__button_dsb" type="submit" disabled>
-              Найти
-            </button>
-          ) : (
+          {
             <button className="search-form__button" type="submit">
               Найти
             </button>
-          )}
+          }
         </div>
         <span className="input__error">{errMessageSearch}</span>
 
