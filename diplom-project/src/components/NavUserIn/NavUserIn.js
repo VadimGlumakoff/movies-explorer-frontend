@@ -38,7 +38,7 @@ function NavUserIn() {
       />
       <div className="nav-user-in__container">
         <a
-          href="movies"
+          href="/movies"
           className={
             location === "/profile" ||
             location === "/movies" ||
