@@ -1,0 +1,53 @@
+.nav-user-up {
+  margin-top: 29px;
+  margin-right: 3px;
+}
+
+.nav-user-up__link {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 29px 30px 0 0;
+}
+
+.nav-user-up__link:hover {
+  color: #cccccc;
+  transition: 0.5s ease-in;
+}
+
+.nav-user-up__button {
+  text-decoration: none;
+  cursor: pointer;
+  width: 76px;
+  height: 32px;
+  background-color: #2be080;
+  border-radius: 3px;
+  border: none;
+  
+  color: #000000;
+  padding: 8px 20px 8px 20px;
+}
+
+.nav-user-up__button:hover {
+  background-color: #20c16b;
+  transition: 0.5s ease-in;
+}
+
+@media screen and (max-width: 400px) {
+  .nav-user-up {
+    margin-left: 15px;
+  }
+  .nav-user-up__button {
+    width: 54px;
+    height: 26px;
+    padding: 6px 11px 6px 11px;
+  }
+
+  .nav-user-up {
+    margin-top: 25px;
+    margin-right: 3px;
+  }
+
+  .nav-user-up__link {
+    margin-right: 14px;
+  }
+}

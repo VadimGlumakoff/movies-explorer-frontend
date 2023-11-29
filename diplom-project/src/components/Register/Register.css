@@ -1,0 +1,92 @@
+.register {
+  display: flex;
+}
+
+.register__container {
+  max-width: 1280px;
+  margin: 69px auto 0 auto;
+  padding-bottom: 232px;
+}
+
+.button_type_register-dsb {
+  background-color: rgb(183, 183, 183);
+}
+
+.form__button_type_register {
+    margin-top: 150px;
+    
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px;
+}
+
+.form__name_type_register {
+    margin-top: 23px;
+  }
+
+  .subtitle_type_register {
+    margin-left: 90px;
+  }
+
+@media screen and (max-width: 768px) {
+
+    .register__container {
+        max-width: 768px;
+        margin: 231px auto 0 auto;
+      }
+
+      .form__button_type_register {
+        margin-top: 151px;
+      }
+
+      .form__name_type_register {
+        margin-top: 25px;
+      }
+
+      
+}
+
+@media screen and (max-width: 480px) {
+    .register {
+      max-width: 480px;
+      display: block;
+      padding: 0 30px 30px 30px;
+    }
+  
+    .register__container {
+      margin: 57px auto 0 auto;
+    }
+
+    .subtitle_type_register {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 23px auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .register {
+        max-width: 320px;
+        display: block;
+        padding: 0 30px 0 30px;
+    }
+
+    .subtitle_type_register {
+     margin-top: 16px;
+     
+    }
+
+    .register__container {
+        padding: 0;
+        margin: 57px auto 30px auto;
+        
+      }
+
+      .form__button_type_register {
+        margin-top: 238px;
+      }
+
+      
+    }
