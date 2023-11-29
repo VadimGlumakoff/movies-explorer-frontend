@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Burger from "../Burger/Burger";
 import { useState, useEffect } from "react";
 import "./NavUserIn.css";
@@ -37,8 +37,8 @@ function NavUserIn() {
         setOpenBurger={setOpenBurger}
       />
       <div className="nav-user-in__container">
-        <a
-          href="/movies"
+        <NavLink
+          to="/movies"
           className={
             location === "/profile" ||
             location === "/movies" ||
@@ -48,9 +48,9 @@ function NavUserIn() {
           }
         >
           Фильмы
-        </a>
-        <a
-          href="/saved-movies"
+        </NavLink>
+        <NavLink
+          to="/saved-movies"
           className={
             location === "/profile" ||
             location === "/movies" ||
@@ -60,7 +60,7 @@ function NavUserIn() {
           }
         >
           Сохраненные фильмы
-        </a>
+        </NavLink>
       </div>
 
       <button
