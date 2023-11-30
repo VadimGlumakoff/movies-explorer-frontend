@@ -1,4 +1,5 @@
 import "./Profile.css";
+import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 import { useState } from "react";
 import { useFormWithValidation } from "../../utils/useFormWithValidation";
@@ -37,7 +38,7 @@ function Profile({ removeToken, updateUser, message, isUpdateUser }) {
               placeholder="Ваше имя"
               type="text"
               onChange={handleChange}
-              value={values.name}
+              defaultValue={currentUser.name || values.name}
             />
           </div>
           <div className="profile__err-container ">
@@ -54,7 +55,7 @@ function Profile({ removeToken, updateUser, message, isUpdateUser }) {
               maxLength="30"
               placeholder="Ваш e-mail"
               onChange={handleChange}
-              value={values.email}
+              defaultValue={currentUser.email || values.email}
             />
           </div>
           <div className="profile__err-container ">
@@ -95,13 +96,12 @@ function Profile({ removeToken, updateUser, message, isUpdateUser }) {
               </button>
             )}
 
-            <a
+            <Link
               className="profile__link profile__link_type_exit"
               onClick={removeToken}
-              href="/signin"
             >
               Выйти из аккаунта
-            </a>
+            </Link>
           </div>
         </form>
       </div>

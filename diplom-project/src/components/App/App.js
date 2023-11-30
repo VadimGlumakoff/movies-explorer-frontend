@@ -214,6 +214,7 @@ function App() {
       .then()
       .catch((err) => {
         console.log(err);
+        navigate("/");
       })
       .finally(() => {
         setLoading(false);

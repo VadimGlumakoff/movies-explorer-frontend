@@ -39,7 +39,7 @@ export const checkToken = () => {
 };
 
 export const logout = () => {
-  return fetch("https://glumakoffdiplom.nomoredomainsrocks.ru/logout", {
+  return fetch("https://glumakoffdiplom.nomoredomainsrocks.ru/signout", {
     method: "GET",
     credentials: "include",
     headers: {

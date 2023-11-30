@@ -33,18 +33,14 @@ function SavedMovies({ deleteMovie, savedMovies }) {
 
   const savedFilms = filteredSavedMovie(savedMovies, query);
 
-  useEffect(() => {
-    const checkBox = sessionStorage.getItem("savedCheckbox");
-    setcheckbox(Boolean(checkBox));
-  }, []);
 
   const checkboxClick = () => {
     if (checkbox === false) {
       setcheckbox(true);
-      sessionStorage.setItem("savedCheckbox", true);
+     
     } else {
       setcheckbox(false);
-      sessionStorage.removeItem("savedCheckbox");
+
     }
   };
   return (
