@@ -212,8 +212,8 @@ function App() {
     auth
       .logout()
       .then((res) => {
-        navigate("/")
-        isLoggedIn(false)
+        navigate("/");
+        isLoggedIn(false);
       })
       .catch((err) => {
         console.log(err);
@@ -265,39 +265,41 @@ function App() {
             <Route
               path="/movies"
               element={
-                isLoggedIn ? (
-                  <Movies
-                    movies={movies}
-                    setMovies={setMovies}
-                    saveMovie={saveMovie}
-                    deleteMovie={deleteMovie}
-                    handleChangeQuery={handleChangeQuery}
-                    isQueryIn={isQueryIn}
-                  />
-                ) : (
-                  <Navigate to="/" />
-                )
+                <Movies
+                  movies={movies}
+                  setMovies={setMovies}
+                  saveMovie={saveMovie}
+                  deleteMovie={deleteMovie}
+                  handleChangeQuery={handleChangeQuery}
+                  isQueryIn={isQueryIn}
+                />
               }
             />
             <Route path="*" element={<NotFound />} />
             <Route
               path="/signin"
               element={
-                !isLoggedIn ? (<Login
-                  userLogin={userLogin}
-                  errorMessageLogin={errorMessageLogin}
-                />) : <Navigate to=""/>
-                
+                !isLoggedIn ? (
+                  <Login
+                    userLogin={userLogin}
+                    errorMessageLogin={errorMessageLogin}
+                  />
+                ) : (
+                  <Navigate to="" />
+                )
               }
             />
             <Route
               path="/signup"
               element={
-                !isLoggedIn ? (<Register
-                  userRegister={userRegister}
-                  errorMessageEmail={errorMessageEmail}
-                />) : <Navigate to="/"/>
-                
+                !isLoggedIn ? (
+                  <Register
+                    userRegister={userRegister}
+                    errorMessageEmail={errorMessageEmail}
+                  />
+                ) : (
+                  <Navigate to="/" />
+                )
               }
             />
 
