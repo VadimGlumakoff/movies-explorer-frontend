@@ -20,7 +20,7 @@ class MainApi {
   }
 
   getInitialMovie() {
-    return fetch("https://glumakoffdiplomfront.nomoredomainsmonster.ru/movies", {
+    return fetch("https://glumakoffdiplom.nomoredomainsrocks.ru/movies", {
       method: "GET",
       credentials: "include",
       headers: this.headers,
@@ -31,7 +31,7 @@ class MainApi {
 
 
   editUserInfo(data) {
-    return fetch("https://glumakoffdiplomfront.nomoredomainsmonster.ru/users/me", {
+    return fetch("https://glumakoffdiplom.nomoredomainsrocks.ru/users/me", {
       method: "PATCH",
       credentials: "include",
       headers: this.headers,
@@ -45,7 +45,7 @@ class MainApi {
   }
 
   getUserInfo() {
-    return fetch("https://glumakoffdiplomfront.nomoredomainsmonster.ru/users/me", {
+    return fetch("https://glumakoffdiplom.nomoredomainsrocks.ru/users/me", {
       method: "GET",
       credentials: "include",
       headers: this.headers,
@@ -55,7 +55,7 @@ class MainApi {
   }
 
   saveMovie(movie) {
-    return fetch("https://glumakoffdiplomfront.nomoredomainsmonster.ru/movies", {
+    return fetch("https://glumakoffdiplom.nomoredomainsrocks.ru/movies", {
       method: "POST",
       credentials: "include",
       headers: this.headers,
@@ -66,7 +66,7 @@ class MainApi {
   }
 
   deleteMovie(movieId) {
-    return fetch(`https://glumakoffdiplomfront.nomoredomainsmonster.ru/movies/${movieId}`, {
+    return fetch(`https://glumakoffdiplom.nomoredomainsrocks.ru/movies/${movieId}`, {
       method: "DELETE",
       credentials: "include",
       headers: this.headers,

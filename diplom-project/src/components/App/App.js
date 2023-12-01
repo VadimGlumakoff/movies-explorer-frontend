@@ -212,8 +212,8 @@ function App() {
     auth
       .logout()
       .then((res) => {
-        
-        
+        navigate("/")
+        isLoggedIn(false)
       })
       .catch((err) => {
         console.log(err);
