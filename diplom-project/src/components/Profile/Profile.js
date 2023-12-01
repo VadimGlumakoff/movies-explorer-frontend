@@ -1,7 +1,7 @@
 import "./Profile.css";
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
-import { useState } from "react";
+
 import { useFormWithValidation } from "../../utils/useFormWithValidation";
 import CurrentUserContext from "../../context/context";
 
@@ -97,6 +97,7 @@ function Profile({ removeToken, updateUser, message, isUpdateUser }) {
             )}
 
             <Link
+              to="/"
               className="profile__link profile__link_type_exit"
               onClick={removeToken}
             >
