@@ -1,6 +1,7 @@
 import logo from "../../images/logo.svg";
 import "./Login.css";
 import { useFormWithValidation } from "../../utils/useFormWithValidation";
+import { Link } from "react-router-dom";
 
 
 function Login(props) {
@@ -16,9 +17,9 @@ function Login(props) {
   return (
     <section className="login">
       <div className="login__container">
-        <a href="/">
+        <Link to="/">
           <img className="logo" src={logo} alt="Логотип" />
-        </a>
+        </Link>
         <h1 className="title">Рады видеть!</h1>
         <form className="form" onSubmit={handleSubmit}>
           <label className="form__name">E-mail</label>
@@ -62,9 +63,9 @@ function Login(props) {
         </form>
         <div className="subtitle">
           <p className="subtitle__text">Еще не зарегистрированы?</p>
-          <a className="subtitle__link" href="/signup">
+          <Link className="subtitle__link" to="/signup">
             Регистрация
-          </a>
+          </Link>
         </div>
       </div>
     </section>

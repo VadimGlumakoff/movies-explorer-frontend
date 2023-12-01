@@ -3,6 +3,7 @@ import React from "react";
 import "./Register.css";
 
 import { useFormWithValidation } from "../../utils/useFormWithValidation";
+import { Link } from "react-router-dom";
 
 function Register(props) {
   const { values, handleChange, errors, isValid } = useFormWithValidation();
@@ -15,9 +16,9 @@ function Register(props) {
   return (
     <section className="register">
       <div className="register__container">
-        <a href="/">
+        <Link to="/">
           <img className="logo" src={logo} alt="Логотип" />
-        </a>
+        </Link>
         <h1 className="title">Добро пожаловать!</h1>
         <form className="form" onSubmit={handleSubmit}>
           <label className="form__name">Имя</label>
@@ -84,9 +85,9 @@ function Register(props) {
         </form>
         <div className="subtitle subtitle_type_register">
           <p className="subtitle__text">Уже зарегистрированы?</p>
-          <a className="subtitle__link" href="/signin">
+          <Link className="subtitle__link" to="/signin">
             Войти
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@ import logo from "../../images/logo.svg";
 import React from "react";
 import NavUserIn from "../NavUserIn/NavUserIn";
 import NavUserUp from "../NavUserUp/NavUserUp";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 function Header({ isLoggedIn }) {
   const location = useLocation().pathname;
@@ -25,9 +25,9 @@ function Header({ isLoggedIn }) {
       }
     >
       <div className="header__container">
-        <a className={homeClass} href="/">
+        <Link className={homeClass} to="/">
           <img className="header__logo" src={logo} alt="Логотип" />
-        </a>
+        </Link>
         <nav className={headerNavClass}>
           {!isLoggedIn && <NavUserUp />}
           {isLoggedIn && <NavUserIn />}

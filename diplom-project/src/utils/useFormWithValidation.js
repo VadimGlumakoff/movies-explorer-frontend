@@ -15,7 +15,7 @@ export function useFormWithValidation() {
     if (name === 'email') {
       const test = regexEmail.test((value))
       if (!test) {
-        setErrors({ ...errors, [name]: 'Ошибка при вводе данных' });
+        setErrors({ ...errors, [name]: 'Неверный формат' });
         setIsValid(false);
       } else {
         setErrors({ ...errors, [name]: target.validationMessage });

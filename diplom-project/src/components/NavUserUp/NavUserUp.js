@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 import "./NavUserUp.css";
 
 function NavUserUp() {
   return (
     <div className="nav-user-up">
-      <a href="/signup" className="nav-user-up__link">
+      <Link to="/signup" className="nav-user-up__link">
         Регистрация
-      </a>
+      </Link>
 
-      <a className="nav-user-up__button" href="/signin">
+      <Link className="nav-user-up__button" to="/signin">
         Войти
-      </a>
+      </Link>
     </div>
   );
 }

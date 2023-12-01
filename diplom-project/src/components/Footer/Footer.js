@@ -1,5 +1,5 @@
 import "./Footer.css";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 function Footer() {
   const location = useLocation().pathname;
 
@@ -27,24 +27,24 @@ function Footer() {
           <p className="footer__date">&copy;2023</p>
           <ul className="footer__end">
             <li className="footer__item">
-              <a
+              <Link
                 className="footer__yandex"
-                href="https://practicum.yandex.ru/"
+                to="https://practicum.yandex.ru/"
                 rel="noreferrer"
                 target="_blank"
               >
                 Яндекс.Практикум
-              </a>
+              </Link>
             </li>
             <li className="footer__item">
-              <a
+              <Link
                 className="footer__link"
                 rel="noreferrer"
                 target="_blank"
-                href="https://github.com/VadimGlumakoff?tab=repositories"
+                to="https://github.com/VadimGlumakoff?tab=repositories"
               >
                 Github
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

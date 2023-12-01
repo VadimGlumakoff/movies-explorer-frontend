@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import imageWeb from "../../images/web.svg";
 
 import "./Promo.css";
@@ -15,9 +16,9 @@ function Promo() {
             Листайте ниже, чтобы узнать больше про этот проект и его создателя.
           </p>
           <div className="promo__text-button">
-            <a href="#section-portfolio" className="promo__button">
+            <Link to="#section-portfolio" className="promo__button">
               Узнать больше
-            </a>
+            </Link>
           </div>
         </div>
 

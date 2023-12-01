@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./MoviesCard.css";
 
 function MoviesCard({ movie, saveMovie, deleteMovie }) {
@@ -23,7 +24,7 @@ ${
 
   return (
     <li className="card">
-      <a target="_blank" rel="noreferrer" href={movie.trailerLink}>
+      <Link target="_blank" rel="noreferrer" to={movie.trailerLink}>
         <img
           className="card__image"
           src={
@@ -33,7 +34,7 @@ ${
           }
           alt={`Обложка фильма: ${movie.nameRU}`}
         />
-      </a>
+      </Link>
       <div className="card__container">
         <h2 className="card__title">{movie.nameRU}</h2>
         <button
