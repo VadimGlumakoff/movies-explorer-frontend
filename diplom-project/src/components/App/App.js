@@ -265,14 +265,18 @@ function App() {
             <Route
               path="/movies"
               element={
-                <Movies
-                  movies={movies}
-                  setMovies={setMovies}
-                  saveMovie={saveMovie}
-                  deleteMovie={deleteMovie}
-                  handleChangeQuery={handleChangeQuery}
-                  isQueryIn={isQueryIn}
-                />
+                isLoggedIn === true ? (
+                  <Movies
+                    movies={movies}
+                    setMovies={setMovies}
+                    saveMovie={saveMovie}
+                    deleteMovie={deleteMovie}
+                    handleChangeQuery={handleChangeQuery}
+                    isQueryIn={isQueryIn}
+                  />
+                ) : (
+                  <Navigate to="/" />
+                )
               }
             />
             <Route path="*" element={<NotFound />} />
