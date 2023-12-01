@@ -1,7 +1,7 @@
 import logo from "../../images/logo.svg";
 import React from "react";
 import "./Register.css";
-import { regexEmail } from "../../utils/config";
+
 import { useFormWithValidation } from "../../utils/useFormWithValidation";
 
 function Register(props) {
@@ -50,7 +50,7 @@ function Register(props) {
             name="email"
             value={values.email}
             onChange={handleChange}
-           pattern={regexEmail}
+       
           ></input>
 
           <span className="form__input_err">{errors.email}</span>

@@ -5,7 +5,7 @@ function checkResponse(res) {
 }
 
 export const register = ({ email, password, name }) => {
-  return fetch("https://glumakoffdiplom.nomoredomainsrocks.ru/signup", {
+  return fetch("https://glumakoffdiplomfront.nomoredomainsmonster.ru/signup", {
     method: "POST",
     credentials: "include",
     headers: {
@@ -17,7 +17,7 @@ export const register = ({ email, password, name }) => {
 };
 
 export const authorization = ({ email, password }) => {
-  return fetch("https://glumakoffdiplom.nomoredomainsrocks.ru/signin", {
+  return fetch("https://glumakoffdiplomfront.nomoredomainsmonster.ru/signin", {
     method: "POST",
     credentials: "include",
     headers: {
@@ -29,7 +29,7 @@ export const authorization = ({ email, password }) => {
 };
 
 export const checkToken = () => {
-  return fetch("https://glumakoffdiplom.nomoredomainsrocks.ru/users/me", {
+  return fetch("https://glumakoffdiplomfront.nomoredomainsmonster.ru/users/me", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -39,7 +39,7 @@ export const checkToken = () => {
 };
 
 export const logout = () => {
-  return fetch("https://glumakoffdiplom.nomoredomainsrocks.ru/signout", {
+  return fetch("https://glumakoffdiplomfront.nomoredomainsmonster.ru/signout", {
     method: "GET",
     credentials: "include",
     headers: {

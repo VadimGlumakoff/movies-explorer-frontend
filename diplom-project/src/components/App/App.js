@@ -211,7 +211,10 @@ function App() {
     setLoading(true);
     auth
       .logout()
-      .then()
+      .then((res) => {
+        navigate("/");
+        setIsLoggedIn(false);
+      })
       .catch((err) => {
         console.log(err);
         navigate("/");
@@ -219,7 +222,6 @@ function App() {
       .finally(() => {
         setLoading(false);
       });
-    navigate("/");
   }
 
   function updateUser({ email, name }) {
