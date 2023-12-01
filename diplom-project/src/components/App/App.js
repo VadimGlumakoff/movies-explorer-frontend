@@ -283,19 +283,21 @@ function App() {
             <Route
               path="/signin"
               element={
-                <Login
+                !isLoggedIn ? (<Login
                   userLogin={userLogin}
                   errorMessageLogin={errorMessageLogin}
-                />
+                />) : <Navigate to=""/>
+                
               }
             />
             <Route
               path="/signup"
               element={
-                <Register
+                !isLoggedIn ? (<Register
                   userRegister={userRegister}
                   errorMessageEmail={errorMessageEmail}
-                />
+                />) : <Navigate to="/"/>
+                
               }
             />
 
