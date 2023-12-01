@@ -212,7 +212,7 @@ function App() {
     auth
       .logout()
       .then((res) => {
-        navigate("/");
+        res.navigate("/");
         setIsLoggedIn(false);
       })
       .catch((err) => {

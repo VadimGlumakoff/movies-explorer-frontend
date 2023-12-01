@@ -97,7 +97,6 @@ function Profile({ removeToken, updateUser, message, isUpdateUser }) {
             )}
 
             <Link
-              to="/"
               className="profile__link profile__link_type_exit"
               onClick={removeToken}
             >
