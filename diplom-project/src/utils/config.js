@@ -9,4 +9,4 @@ export const SMALL_SCREEN_RENDER_MOVIES = 5;
 export const isDesktopWidth = "(min-width: 1249px)";
 export const isTabletWidth = "(min-width: 749px)";
 
-export const regexEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$/;
+export const regexEmail = "^[^ ]+@[^ ]+\\.[a-z]{2,6}$";

@@ -2,6 +2,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import CurrentUserContext from "../../context/context";
+import ProtectedRouteElement from "../ProtectedRoute/ProtectedRoute";
 import {
   Route,
   Routes,
@@ -59,6 +60,7 @@ function App() {
       api
         .getUserInfo()
         .then((data) => {
+          setIsLoggedIn(true);
           setCurrentUser(data);
         })
         .catch((err) => {
@@ -218,6 +220,7 @@ function App() {
       .catch((err) => {
         console.log(err);
         navigate("/");
+        setIsLoggedIn(false);
       })
       .finally(() => {
         setLoading(false);
@@ -255,9 +258,11 @@ function App() {
             <Route
               path="/saved-movies"
               element={
-                <SavedMovies
+                <ProtectedRouteElement
+                  element={SavedMovies}
                   savedMovies={savedMovies}
                   deleteMovie={deleteMovie}
+                  isLoggedIn={isLoggedIn}
                 />
               }
             />
@@ -265,13 +270,15 @@ function App() {
             <Route
               path="/movies"
               element={
-                <Movies
+                <ProtectedRouteElement
+                  element={Movies}
                   movies={movies}
                   setMovies={setMovies}
                   saveMovie={saveMovie}
                   deleteMovie={deleteMovie}
                   handleChangeQuery={handleChangeQuery}
                   isQueryIn={isQueryIn}
+                  isLoggedIn={isLoggedIn}
                 />
               }
             />
@@ -285,7 +292,7 @@ function App() {
                     errorMessageLogin={errorMessageLogin}
                   />
                 ) : (
-                  <Navigate to="" />
+                  <Navigate to="/" />
                 )
               }
             />
@@ -306,12 +313,14 @@ function App() {
             <Route
               path="/profile"
               element={
-                <Profile
+                <ProtectedRouteElement
+                  element={Profile}
                   isUpdateUser={isUpdateUser}
                   message={message}
                   updateUser={updateUser}
                   removeToken={removeToken}
                   profileName={profileName}
+                  isLoggedIn={isLoggedIn}
                 />
               }
             />

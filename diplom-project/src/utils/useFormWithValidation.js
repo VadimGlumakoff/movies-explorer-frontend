@@ -1,33 +1,24 @@
 import { useCallback, useState } from "react";
 import { regexEmail } from "./config";
+import validator  from "validator";
+import { useEffect } from "react";
 
+
+
+//хук управления формой и валидации формы
 export function useFormWithValidation() {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
 
   const handleChange = (event) => {
-    
     const target = event.target;
     const name = target.name;
     const value = target.value;
-    setValues({ ...values, [name]: value });
-    if (name === 'email') {
-      const test = regexEmail.test((value))
-      if (!test) {
-        setErrors({ ...errors, [name]: 'Неверный формат' });
-        setIsValid(false);
-      } else {
-        setErrors({ ...errors, [name]: target.validationMessage });
-        setIsValid(target.closest('form').checkValidity());
-      }
-
-    } else {
-      setErrors({ ...errors, [name]: target.validationMessage });
-      setIsValid(target.closest('form').checkValidity());
-    }
+    setValues({...values, [name]: value});
+    setErrors({...errors, [name]: target.validationMessage });
+    setIsValid(target.closest("form").checkValidity());
   };
-
 
   const resetForm = useCallback(
     (newValues = {}, newErrors = {}, newIsValid = false) => {
@@ -38,5 +29,19 @@ export function useFormWithValidation() {
     [setValues, setErrors, setIsValid]
   );
 
-  return { values, handleChange, errors, isValid, resetForm };
+  return { values, handleChange, errors, isValid, resetForm, setValues, setIsValid };
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

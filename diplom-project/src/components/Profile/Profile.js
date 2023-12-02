@@ -1,14 +1,15 @@
 import "./Profile.css";
 import { Link } from "react-router-dom";
-import React, { useContext } from "react";
-
+import React, { useContext, useEffect, useState } from "react";
+import { regexEmail } from "../../utils/config";
 import { useFormWithValidation } from "../../utils/useFormWithValidation";
 import CurrentUserContext from "../../context/context";
 
 function Profile({ removeToken, updateUser, message, isUpdateUser }) {
-  const { values, handleChange, errors, isValid } = useFormWithValidation();
+  const { values, setValues, handleChange, errors, isValid, setIsValid } = useFormWithValidation();
 
   const currentUser = useContext(CurrentUserContext);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,8 +20,22 @@ function Profile({ removeToken, updateUser, message, isUpdateUser }) {
     });
   };
 
-  const data =
-    currentUser.email === values.email && currentUser.name === values.name;
+  useEffect(() => {
+    if (currentUser) {
+      setValues({
+        name: currentUser.name,
+        email: currentUser.email,
+      });
+    }
+  }, [setValues, currentUser]); 
+
+  
+ useEffect(() => {
+    if (currentUser.name === values.name && currentUser.email === values.email) {
+      setIsValid(false);
+    }
+  }, [setIsValid, values, currentUser]);
+
 
   return (
     <section className="profile">
@@ -38,7 +53,7 @@ function Profile({ removeToken, updateUser, message, isUpdateUser }) {
               placeholder="Ваше имя"
               type="text"
               onChange={handleChange}
-              defaultValue={currentUser.name || values.name}
+              defaultValue={values.name || ""}
             />
           </div>
           <div className="profile__err-container ">
@@ -55,7 +70,8 @@ function Profile({ removeToken, updateUser, message, isUpdateUser }) {
               maxLength="30"
               placeholder="Ваш e-mail"
               onChange={handleChange}
-              defaultValue={currentUser.email || values.email}
+              defaultValue={values.email || ""}
+              pattern={regexEmail}
             />
           </div>
           <div className="profile__err-container ">
@@ -70,19 +86,11 @@ function Profile({ removeToken, updateUser, message, isUpdateUser }) {
             {message}
           </p>
           <div className="profile__btn">
-            {isValid && !data ? (
+            {isValid ? (
               <button
                 className="profile__button"
                 type="submit"
                 onSubmit={handleSubmit}
-              >
-                Редактировать
-              </button>
-            ) : data ? (
-              <button
-                className="profile__button_disabled "
-                disabled
-                type="submit"
               >
                 Редактировать
               </button>
@@ -94,7 +102,7 @@ function Profile({ removeToken, updateUser, message, isUpdateUser }) {
               >
                 Редактировать
               </button>
-            )}
+            ) }
 
             <Link
               className="profile__link profile__link_type_exit"

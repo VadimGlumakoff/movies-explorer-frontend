@@ -2,7 +2,7 @@ import logo from "../../images/logo.svg";
 import "./Login.css";
 import { useFormWithValidation } from "../../utils/useFormWithValidation";
 import { Link } from "react-router-dom";
-
+import { regexEmail } from "../../utils/config";
 
 function Login(props) {
   const { values, handleChange, errors, isValid } = useFormWithValidation();
@@ -34,6 +34,7 @@ function Login(props) {
             className="form__input"
             placeholder="Введите e-mail"
             required
+            pattern={regexEmail}
           ></input>
           <span className="form__input_err">{errors.email}</span>
           <label className="form__name">Пароль</label>

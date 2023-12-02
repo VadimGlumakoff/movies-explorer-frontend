@@ -1,9 +1,11 @@
 import logo from "../../images/logo.svg";
 import React from "react";
 import "./Register.css";
-
+import { regexEmail } from "../../utils/config";
 import { useFormWithValidation } from "../../utils/useFormWithValidation";
 import { Link } from "react-router-dom";
+
+
 
 function Register(props) {
   const { values, handleChange, errors, isValid } = useFormWithValidation();
@@ -51,7 +53,7 @@ function Register(props) {
             name="email"
             value={values.email}
             onChange={handleChange}
-       
+            pattern={regexEmail}
           ></input>
 
           <span className="form__input_err">{errors.email}</span>
