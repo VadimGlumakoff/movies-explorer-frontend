@@ -1,0 +1,183 @@
+.footer {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15.73px;
+  padding-bottom: 20px;
+
+}
+
+.footer__container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.footer__item {
+  list-style-type: none;
+  color: #000000;
+  margin: 0;
+  
+}
+
+.footer__end {
+    display: flex;
+   margin: 0;
+}
+
+
+
+.footer__subtitle_type_movies {
+  margin: 40px 0 0 0;
+  padding: 0 70px 0 70px;
+  display: flex;
+  justify-content: space-between;
+  color: #000000;
+}
+
+.footer__line {
+  
+  margin: 204px 70px 0 70px;
+  padding: 0 70px 20px 70px;
+  border-bottom: 1px solid #e8e8e8;
+  
+}
+
+.footer__line_type_movies {
+    margin: 159px 0 0 0;
+  }
+
+.footer__yandex {
+  color: black;
+  text-decoration: none;
+  display: inline;
+  margin-right: 20px;
+  
+}
+
+.footer__yandex:hover {
+  opacity: 0.5;
+  transition: 0.5s ease-in;
+}
+
+.footer__title {
+  text-align: center;
+  margin: 0;
+  color: #a0a0a0;
+}
+
+.footer__subtitle {
+  margin: 20px 0 0 0;
+  padding: 0 70px 0 70px;
+  display: flex;
+  justify-content: space-between;
+  color: #000000;
+}
+
+.footer__date {
+  margin: 0 0 0 3px;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: black;
+}
+
+.footer__link:hover {
+    opacity: 0.5;
+    transition: 0.5s ease-in;
+}
+
+@media screen and (max-width: 1232px) {
+  .footer {
+    max-width: 768px;
+    padding: 0 30px 0 30px;
+  }
+
+  .footer__subtitle {
+    padding: 0;
+  }
+
+  .footer__line {
+    margin: 170px 0 0 0;
+    
+  }
+
+  .footer__line_type_movies {
+    margin-top: 159px;
+  }
+
+  .footer__yandex {
+    margin-right: 21px;
+  }
+
+  .footer__subtitle_type_movies {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .footer {
+    max-width: 450px;
+    padding: 0 10px 20px 10px;
+  }
+
+  .footer__subtitle {
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    font-size: 12px;
+    line-height: 14.52px;
+    margin-top: 32px;
+  }
+
+  .footer__line {
+    margin: 151px auto 0 auto;
+    padding: 0 10px 20px 10px;
+    max-width: 450px;
+    
+  }
+
+  .footer__date {
+    margin: 30px 0 0 0;
+    color: #a0a0a0;
+  }
+
+  .footer__yandex {
+   
+    padding: 0;
+    margin: 10px 0 0 0;
+    
+  }
+
+  
+
+  .footer__title {
+    max-width: 400px;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  .footer__link {
+    display: block;
+    margin-top: 13px;
+  }
+
+  .footer__subtitle_type_movies {
+    margin: 32px auto 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+   align-items: center;
+   text-align: center;
+  }
+
+  .footer__line_type_movies {
+    margin-top: 158px;
+  }
+
+  .footer__end {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+}

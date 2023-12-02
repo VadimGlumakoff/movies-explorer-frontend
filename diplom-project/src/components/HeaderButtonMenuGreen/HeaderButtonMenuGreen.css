@@ -1,0 +1,40 @@
+
+
+.button-menu-green__link {
+    border: none;
+    background-color: #2BE080;
+    border-radius: 50px;
+    box-shadow: 0px 3px 14px #00000014;
+    display: flex;
+    width: 100px;
+    height: 32px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .button-menu-green__link:hover {
+    opacity: 0.6;
+    transition: 0.5s ease-in;
+  }
+  
+  .button-menu-green__text {
+    
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 12px;
+    margin-top: 10px;
+    margin-left: 7px;
+  }
+  
+  .button-menu-green__icon {
+    width: 26px;
+    height: 26px;
+    margin-top: 2px;
+    margin-left: 10px;
+  }
+  
+  .button-menu-green {
+    text-decoration: none;
+  }
+  
